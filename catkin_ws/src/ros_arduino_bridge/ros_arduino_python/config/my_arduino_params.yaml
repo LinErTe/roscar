@@ -1,0 +1,63 @@
+# For a direct USB cable connection, the port name is typically
+# /dev/ttyACM# where is # is a number such as 0, 1, 2, etc
+# For a wireless connection like XBee, the port is typically
+# /dev/ttyUSB# where # is a number such as 0, 1, 2, etc.
+
+port: /dev/arduino     #这个port的名称时经过端口绑定后的名称
+baud: 57600
+timeout: 0.1
+
+rate: 50
+sensorstate_rate: 10
+
+use_base_controller: True
+base_controller_rate: 10
+
+# For a robot that uses base_footprint, change base_frame to base_footprint
+base_frame: base_link        #这个主要有base_link和base_footprint两种，差不多     ----------------
+                                                      #                           -              -
+# === Robot drivetrain parameters                     #                           -              -
+wheel_diameter: 0.065                                 #                           -              -
+wheel_track: 0.210                                   #                           -       ×      -      一般×那个位置就是base_footprint,就是指小车底盘的中心并且和平面接触的那个地方，base_link就是base_footprint
+encoder_resolution: 13                                #                           -              -      在Z周方向上的偏移量。如果程序中不使用tf_transform_publish显式指定，指的就是一个位置
+gear_reduction: 30                             #                           -              -
+motors_reversed: True                                #                           -              -
+                                                      #                           ----------------
+
+#上面几个参数的说明：wheel_diameter 轮子直径   wheel_track 两个轮子之间的距离   encoder_resolution  编码器的线数，未减速之前的线数，如果看base_controller.py和arduino_driver.py的源码的话，会注意到encoder_resolutio
+#n还乘了减速比，所以是减速前的线数   gear_reduction  减速比     motor_reversed  电机是否反转
+#
+# === PID parameters
+Kp: 20
+Kd: 12
+Ki: 0
+Ko: 50
+accel_limit: 1.0
+left_Kp: 20
+left_Kd: 12
+left_Ki: 0
+left_Ko: 50    #一般不要改动Ko
+
+right_Kp: 20
+right_Kd: 12
+right_Ki: 0
+right_Ko: 50
+# === Sensor definitions.  Examples only - edit for your robot.
+#     Sensor type can be one of the follow (case sensitive!):
+#	  * Ping
+#	  * GP2D12
+#	  * Analog
+#	  * Digital
+#	  * PololuMotorCurrent
+#	  * PhidgetsVoltage
+#	  * PhidgetsCurrent (20 Amp, DC)
+
+
+
+sensors: {
+  #motor_current_left:   {pin: 0, type: PololuMotorCurrent, rate: 5},
+  #motor_current_right:  {pin: 1, type: PololuMotorCurrent, rate: 5},
+  #ir_front_center:      {pin: 2, type: GP2D12, rate: 10},
+  #sonar_front_center:   {pin: 5, type: Ping, rate: 10},
+  arduino_led:          {pin: 13, type: Digital, rate: 5, direction: output}
+}

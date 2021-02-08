@@ -1,0 +1,42 @@
+<!--
+  Copyright(c): 2016-2020 ROS小课堂 www.corvin.cn
+  Description:
+    move base package launch file, load config file for slam,config file list below:
+    (1)costmap_common_params.yaml -global_costmap
+    (2)costmap_common_params.yaml -local_costmap
+    (3)local_costmap_params.yaml
+    (4)global_costmap_params.yaml
+    (5)base_local_planner_params.yaml
+  Author: corvin
+  History:
+    20190728:init this file.
+-->
+<launch>
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+    <param name="base_global_planner" value="navfn/NavfnROS" />
+    <param name="base_local_planner"  value="dwa_local_planner/DWAPlannerROS" />
+
+    <param name="controller_frequency" value="1.5" />
+    <param name="controller_patiente"  value="4.0" />
+
+    <param name="planner_patience"  value="5.0" />
+    <param name="planner_frequency" value="1.0" />
+    <param name="conservative_reset_dist" value="3.0" />
+
+    <param name="recovery_behavior_enabled" value="true" />
+    <param name="clearing_rotation_allowed" value="true" />
+
+    <param name="shutdown_costmaps"    value="false" />
+    <param name="oscillation_timeout"  value="10.0" />
+    <param name="oscillation_distance" value="0.2" />
+
+    <param name="max_planning_retries" value="10"  />
+
+    <rosparam file="$(find jetsonbot_nav)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find jetsonbot_nav)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find jetsonbot_nav)/config/local_costmap_params.yaml"  command="load" />
+    <rosparam file="$(find jetsonbot_nav)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find jetsonbot_nav)/config/dwa_local_planner_params.yaml" command="load" />
+  </node>
+</launch>
+

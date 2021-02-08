@@ -1,0 +1,14 @@
+<!--
+  Copyright: 2016-2020 https://www.corvin.cn ROS小课堂
+  Description:使用串口来读取imu模块的数据,并在ros中发布使用话题发布出来.
+  Author: corvin
+  History:
+    20200401: init this file.
+-->
+<launch>
+  <arg name="imu_cfg_file" default="$(find serial_imu_hat_6dof)/cfg/param.yaml" />
+
+  <node pkg="serial_imu_hat_6dof" type="serial_imu_node" name="serial_imu_node" output="screen">
+    <rosparam file="$(arg imu_cfg_file)" command="load" />
+  </node>
+</launch>

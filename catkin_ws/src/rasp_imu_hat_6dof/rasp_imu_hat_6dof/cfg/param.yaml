@@ -1,0 +1,15 @@
+##################################################
+# Copyright: 2016-2020 www.corvin.cn ROS小课堂
+# Description:使用IIC总线来读取IMU模块的数据,并
+#   通过话题将imu数据发送出来.这里是可以配置的
+#   一些参数.
+# Author: corvin
+# History:
+#   20200406:init this file.
+#   20200410:更新默认发布imu话题数据频率为20hz.
+###################################################
+pub_data_topic: imu
+pub_temp_topic: imu_temp
+yaw_topic: yaw_data
+link_name: imu_link
+pub_hz: 20

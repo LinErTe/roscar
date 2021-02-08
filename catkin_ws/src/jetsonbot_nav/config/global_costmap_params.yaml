@@ -1,0 +1,23 @@
+# Copyright(C): 2016-2020 www.corvin.cn ROS小课堂
+# Description:
+#   全局代价地图配置文件，各参数意义如下：
+#   global_frame: 全局代价地图参考系
+#   robot_base_frame: 指定机器人的基础参考系
+#   update_frequency: 指定地图更新频率，数值太大造成CPU负担重
+#   publish_frequency: 对于静态全局地图来说，不需不断发布
+#   static_map: 全局地图通常是静态的，因此设置为true
+#   rolling_window: 全局地图不会在机器人移动时候更新
+#   transform_tolerance: 指定在tf树中frame直接的转换最大延时，单位秒
+# Author: corvin
+# History:
+#   20180410: init this file.
+#
+global_costmap:
+   global_frame: map
+   robot_base_frame: base_link
+   update_frequency: 1.0
+   publish_frequency: 0
+   static_map: true
+   rolling_window: false
+   transform_tolerance: 2.0
+

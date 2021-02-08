@@ -1,0 +1,12 @@
+<launch>
+	<arg name="model"/>
+	<arg name="gui" default="false"/>
+
+	<param name="robot_description" textfile="$(find jetsonbot_description)/urdf/jetsonbot.urdf" />
+	<param name="use_gui" value="$(arg gui)"/>
+
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+        <node pkg="tf" type="static_transform_publisher" name="imu_link" args="0.03 0.03 0.02 0 0 3.1416 /base_link /imu_link 100" />
+	<!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find jetsonbot_description)/urdf.rviz"/-->
+</launch>

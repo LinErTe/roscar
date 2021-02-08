@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/corvin/catkin_ws22/install/setup.sh

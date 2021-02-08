@@ -1,0 +1,39 @@
+# Copyright(c):2016-2020 ROS小课堂 www.corvin.cn
+# Description:
+# 代价地图通用配置文件，各参数意义如下：
+#   obstacle_range: 最大障碍物检测范围,超过该范围不认为是障碍物
+#   raytrace_range: 检测自由空间的最大范围
+#   robot_radius: 机器人本体的半径大小,单位:米,圆形机器人使用.
+#   footprint: 对于非圆形机器人可以设置该参数,机器人中心[0,0]
+#     参数可以顺时针填写,也可以逆时针填写.
+#   inflation_radius: 与障碍物的安全半径距离,如果机器人经常撞到
+#     障碍物就需要增大该值,若无法通过狭窄地方就减小该值
+#   cost_scaling_factor:用于将inflation计算cost的比例因数,该参数
+#     越大,越不把这个inflating看着移动的cost.
+#   map_type:如果想要3D视图的就用voxel,2D视图的就用costmap参数.
+#   observation_sources: 观察源是激光雷达
+# Author: corvin
+# History:
+#   20180410:init this file.
+#   20200413:更新参数并更新注释信息.
+#
+obstacle_range: 1.0
+raytrace_range: 1.5
+
+#单独圆形机器人的参数
+robot_radius: 0.24
+
+#圆形机器人前面带上下移动夹爪的参数
+#footprint: [[ 0.22,  0.00],[ 0.22,  0.04],[ 0.10,  0.04],
+#            [ 0.09,  0.09],[ 0.00,  0.13],[-0.09,  0.09],
+#            [-0.13,  0.00],[-0.09, -0.09],[ 0.00, -0.13],
+#            [ 0.09, -0.09],[ 0.10, -0.04],[ 0.22, -0.04]]
+
+inflation_radius: 0.12
+cost_scaling_factor: 10
+
+map_type: costmap
+
+observation_sources: scan
+scan: {data_type: LaserScan, topic: scan, marking: true, clearing: true}
+

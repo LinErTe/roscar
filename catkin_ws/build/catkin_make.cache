@@ -1,0 +1,2 @@
+ros_arduino_bridge/ros_arduino_bridge:ros_arduino_bridge/ros_arduino_firmware:ros_arduino_bridge/ros_arduino_msgs:ros_arduino_bridge/ros_arduino_python:ydlidar-master
+-DCATKIN_DEVEL_PREFIX=/home/corvin/catkin_ws22/devel -DCMAKE_INSTALL_PREFIX=/home/corvin/catkin_ws22/install -G Unix Makefiles

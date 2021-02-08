@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="jetsonbot_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00477146601263362 0.0445231650103914 0.00148065177065252"
+        rpy="0 0 0" />
+      <mass
+        value="0.77436818932567" />
+      <inertia
+        ixx="0.0032455066480639"
+        ixy="0.000257629563605878"
+        ixz="-2.90816777085443E-05"
+        iyy="0.00379162309028253"
+        iyz="3.12131637636001E-05"
+        izz="0.00319147695435112" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-2.6909E-08 -1.3134E-08 0.0043558"
+        rpy="0 0 0" />
+      <mass
+        value="0.048275" />
+      <inertia
+        ixx="1.9986E-05"
+        ixy="-5.0436E-11"
+        ixz="7.4667E-12"
+        iyy="1.9986E-05"
+        iyz="3.1445E-12"
+        izz="3.4514E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.043881 0.0215 -0.11073"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="1.1532E-09 -2.9921E-08 -0.0043558"
+        rpy="0 0 0" />
+      <mass
+        value="0.048275" />
+      <inertia
+        ixx="1.9986E-05"
+        ixy="4.2889E-11"
+        ixz="7.604E-13"
+        iyy="1.9986E-05"
+        iyz="-8.0661E-12"
+        izz="3.4514E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.043881 0.0215 0.11073"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="laser_link">
+    <inertial>
+      <origin
+        xyz="0.0062632 -0.0073789 -3.8132E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.13782" />
+      <inertia
+        ixx="5.9984E-05"
+        ixy="1.5622E-05"
+        ixz="1.3073E-08"
+        iyy="0.00011076"
+        iyz="-1.148E-08"
+        izz="9.3876E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_joint"
+    type="fixed">
+    <origin
+      xyz="-0.043232 0.1765 0.00027141"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="niujiaolun_link">
+    <inertial>
+      <origin
+        xyz="0 0.01118 -5.9647E-20"
+        rpy="0 0 0" />
+      <mass
+        value="0.0091101" />
+      <inertia
+        ixx="6.4006E-07"
+        ixy="7.2156E-24"
+        ixz="4.5437E-23"
+        iyy="8.128E-07"
+        iyz="-2.2927E-24"
+        izz="6.1185E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/niujiaolun_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/niujiaolun_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="niujiaolun_joint"
+    type="fixed">
+    <origin
+      xyz="0.092152 -0.0059 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="niujiaolun_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

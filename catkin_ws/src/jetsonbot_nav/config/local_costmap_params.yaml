@@ -1,0 +1,30 @@
+#Copyright(c):2016-2020 www.corvin.cn ROS小课堂
+#Description:
+#  本地代价地图配置文件，各参数意义如下：
+#  global_frame:指定本地代价地图参考系
+#  robot_base_frame:指定机器人的base_frame
+#  update_frequency:指定local代价地图更新频率
+#  publish_frequency: 代价地图发布可视化信息的频率
+#  static_map: 本地代价地图不会更新地图，设置false
+#  rolling_window: 设置滚动窗口,使机器人始终在窗体中心位置
+#  width: 代价地图宽度,滑动地图x维长度
+#  height:代价地图长度,滑动地图y维长度
+#  resolution: 代价地图的分辨率,该参数需要与yaml文件设置的地图
+#    分辨率匹配
+#Author: corvin
+#History:
+#  20180410: init this file.
+#  20200413:更新本地代价地图配置参数.
+local_costmap:
+    global_frame: odom
+    robot_base_frame: base_link
+    update_frequency: 1.0
+    publish_frequency: 1.0
+
+    static_map: false
+    rolling_window: true
+    width: 2.0
+    height: 2.0
+    resolution: 0.02   #should same as map.yaml file
+    transform_tolerance: 2.0
+

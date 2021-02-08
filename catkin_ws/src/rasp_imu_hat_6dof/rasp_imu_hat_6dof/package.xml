@@ -1,0 +1,29 @@
+<package>
+  <name>rasp_imu_hat_6dof</name>
+  <version>1.2.0</version>
+  <description>
+     rasp_imu_hat_6dof is a package that provides a ROS driver
+      for the corvin 6dof imu hat.
+  </description>
+
+  <maintainer email="corvin_zhang@corvin.cn">Corvin Zhang</maintainer>
+
+  <license>BSD</license>
+  <author>Corvin Zhang</author>
+
+  <url type="website">https://www.corvin.cn</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>std_msgs</build_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>message_generation</build_depend>
+
+  <run_depend>rospy</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>dynamic_reconfigure</run_depend>
+  <run_depend>message_runtime</run_depend>
+</package>
+

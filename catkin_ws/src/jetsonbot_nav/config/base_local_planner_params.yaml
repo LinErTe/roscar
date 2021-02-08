@@ -1,0 +1,67 @@
+# Copyright(c): 2016-2020 ROS小课堂 www.corvin.cn
+# Author: corvin
+# Description:
+#  本地规划配置文件,各参数意义如下：
+#   max_vel_x:最大前进速度.
+#   min_vel_x:最小前进速度.
+#   max_vel_y:最大横向移动速度.
+#   min_vel_y:最小横向移动速度.
+#   max_vel_theta:最大旋转角速度.
+#   min_in_place_vel_theta:机器人最小原地旋转速度.
+#   escape_vel: 机器人后退速度,该值必须是负数. 
+# History:
+#   20180410: init this file.
+#   20180411: update param based on kinds.
+#
+
+recovery_behavior_enabled: true
+clearing_rotation_allowed: false
+
+TrajectoryPlannerROS:
+   #Robot Configuration Parameters
+   max_vel_x: 0.15
+   min_vel_x: 0.10
+   y_vels: [-0.17,-0.1,0.1,0.17]
+   max_vel_theta: 0.5
+   min_vel_theta: -0.5
+   min_in_place_vel_theta: 0.3
+   escape_vel: -0.10
+
+   acc_lim_x: 0.05
+   acc_lim_y: 0.05   # accelerator speed 
+   acc_lim_theta: 0.1
+
+   holonomic_robot: true
+
+   #Goal Tolerance Parameters
+   xy_goal_tolerance: 0.30  # 30cm
+   yaw_goal_tolerance: 0.3  # about 17 degrees
+   latch_xy_goal_tolerance: true
+
+   #Forward Simulation Parameters
+   sim_time: 2.0
+   sim_granularity: 0.025
+   angular_sim_granularity: 0.025
+   vx_samples: 5
+   vy_samples: 3 # omniwheel robot
+   vtheta_samples: 12 
+   
+   #Trajectory Scoring Parameters
+   meter_scoring: true
+   pdist_scale: 0.8
+   gdist_scale: 0.5
+   occdist_scale: 0.1
+
+   heading_lookahead: 0.325
+   heading_scoring: false
+   heading_scoring_timestep: 0.8
+   dwa: true
+   publish_cost_grid_pc: false
+
+   #Oscillation Prevention Parameters
+   oscillation_timeout: 3.0
+   oscillation_reset_dist: 0.5
+
+   #Global Plan Parameters
+   prune_plan: true
+

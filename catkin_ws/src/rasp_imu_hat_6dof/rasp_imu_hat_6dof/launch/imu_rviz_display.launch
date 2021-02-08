@@ -1,0 +1,13 @@
+<!---
+  Copyright:2016-2019 https://www.corvin.cn ROS小课堂
+  Author: corvin
+  Description:该launch启动文件是为了在启动扩展板，使其进入正常工作状态后。
+    可以在rviz中可视化imu扩展板当前的姿态信息。
+  History:
+    20191031:Initial this launch file.
+-->
+<launch>
+  <node pkg="rviz" type="rviz" name="imu_rviz_node" 
+        args="-d $(find rasp_imu_hat_6dof)/cfg/imu_display.rviz">
+  </node>
+</launch>

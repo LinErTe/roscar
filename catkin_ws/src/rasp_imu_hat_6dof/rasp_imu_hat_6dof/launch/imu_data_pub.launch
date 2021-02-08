@@ -1,0 +1,17 @@
+<!---
+  Copyright:2016-2019 https://www.corvin.cn ROS小课堂
+  Author: corvin
+  Description:该launch启动文件是为了启动扩展板，使其进入正常工作状态。启动后，就会在
+    /imu话题上发布imu传感器信息。需要该信息的节点，订阅该话题即可。同时，我们还可以使
+    用dynamic_reconfigure来动态的修正z轴的角度。
+  History:
+    20191031:Initial this launch file.
+-->
+<launch>
+  <arg name="imu_cfg_file" default="$(find rasp_imu_hat_6dof)/cfg/param.yaml"/>
+
+  <node pkg="rasp_imu_hat_6dof" type="imu_node.py" name="imu_node" output="screen">
+      <rosparam file="$(arg imu_cfg_file)" command="load"/>
+  </node>
+</launch>
+

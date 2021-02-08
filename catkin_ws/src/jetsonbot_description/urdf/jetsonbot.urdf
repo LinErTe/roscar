@@ -1,0 +1,309 @@
+
+<robot
+  name="rosfight_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.015061 -0.00010286 0.10528"
+        rpy="0 0 0" />
+      <mass
+        value="0.98412" />
+      <inertia
+        ixx="0.0094184"
+        ixy="7.3035E-07"
+        ixz="-0.00014754"
+        iyy="0.0085892"
+        iyz="5.2642E-06"
+        izz="0.0060963" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="-4.26717675777732E-08 0.0024784372408253 -2.97705636195106E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0415060037971292" />
+      <inertia
+        ixx="1.92322968668373E-05"
+        ixy="1.32788270951781E-10"
+        ixz="5.19592168604206E-11"
+        iyy="3.28029658045726E-05"
+        iyz="5.13016185123578E-10"
+        izz="1.92326954454023E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_base_joint"
+    type="continuous">
+    <origin
+      xyz="0.049242 0.1107 -0.02075"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="9.954E-08 -0.0024784 -2.838E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.041506" />
+      <inertia
+        ixx="1.9232E-05"
+        ixy="2.2966E-10"
+        ixz="-1.2382E-10"
+        iyy="3.2803E-05"
+        iyz="-4.7757E-10"
+        izz="1.9233E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_base_joint"
+    type="continuous">
+    <origin
+      xyz="0.049242 -0.11085 -0.02075"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="back_wheel">
+    <inertial>
+      <origin
+        xyz="-0.00061996 -1.5302E-06 0.0020296"
+        rpy="0 0 0" />
+      <mass
+        value="0.015887" />
+      <inertia
+        ixx="2.7704E-06"
+        ixy="-2.0719E-10"
+        ixz="3.0676E-07"
+        iyy="3.9925E-06"
+        iyz="6.7536E-10"
+        izz="1.942E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/back_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/back_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_wheel_base_joint"
+    type="continuous">
+    <origin
+      xyz="-0.07536 -7.7732E-05 -0.034638"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_wheel" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="laser">
+    <inertial>
+      <origin
+        xyz="0.0063185 -6.7163E-07 -0.0074059"
+        rpy="0 0 0" />
+      <mass
+        value="0.13794" />
+      <inertia
+        ixx="6.0291E-05"
+        ixy="8.3328E-10"
+        ixz="1.5787E-05"
+        iyy="9.3994E-05"
+        iyz="-2.3592E-09"
+        izz="0.00011095" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_base_joint"
+    type="fixed">
+    <origin
+      xyz="0.044314 -0.00034914 0.3025"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="imu_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/imu_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://jetsonbot_description/meshes/imu_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_base_joint"
+    type="fixed">
+    <origin
+      xyz="0.033381 0.035368 0.0215"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

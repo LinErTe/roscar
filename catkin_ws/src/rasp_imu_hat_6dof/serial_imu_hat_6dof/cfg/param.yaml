@@ -1,0 +1,32 @@
+################################################
+# Copyright: 2016-2020 www.corvin.cn ROS小课堂
+# Description:使用串口进行通信时的配置信息.
+#   imu_dev:指示串口设备挂在点,如果使用usb转串口
+#     模块,都是写ttyUSB0,1,2等.如果使用树莓派的
+#     GPIO排针处串口,则使用ttyS0.
+#   baud_rate:串口通信波特率,旧模块的波特率为9600,
+#     新版本的波特率为57600,如果串口没数据可以修改.
+#   data_bits:数据位
+#   parity:数据校验位
+#   stop_bits:停止位
+#   pub_data_topic:发布imu数据的话题名.
+#   pub_temp_topic:发布imu模块温度的话题名.
+#   link_name: imu模块的link名.
+#   pub_hz:话题发布的数据频率.
+# Author: corvin
+# History:
+#   20200402: init this file.
+#   20200406: 增加直接发布yaw数据的话题.
+################################################
+imu_dev: /dev/ttyS0
+baud_rate: 57600
+data_bits: 8
+parity: N
+stop_bits: 1
+
+pub_data_topic: imu_data
+pub_temp_topic: imu_temp
+yaw_topic: yaw_data
+link_name: base_imu_link
+pub_hz: 10
+
