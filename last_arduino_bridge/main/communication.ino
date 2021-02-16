@@ -37,7 +37,7 @@ int runCommand(){
 
   switch(cmd){
     case GET_BAUDRATE:
-      Serial.println(Baudrate);
+      Serial.println(BAUDRATE);
       break;
     case READ_PIDIN:
       Serial.print(readPidIn(LEFT));

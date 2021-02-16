@@ -1,4 +1,4 @@
-//这部分就是驱动L298N的代码，可以先了解一下这个驱动器的原理和接口定义
+//这部分就是驱动tb6612fng的代码，可以先了解一下这个驱动器的原理和接口定义
 
 boolean direction(int i){
   if (i == LEFT)  return directionLeft;
@@ -6,8 +6,6 @@ boolean direction(int i){
 }
 
 void initMotorController(){
-  pinMode(PWMA,OUTPUT);
-  pinMode(PWMB,OUTPUT);
   pinMode(AIN1,OUTPUT);
   pinMode(AIN2,OUTPUT);
   pinMode(BIN1,OUTPUT);
