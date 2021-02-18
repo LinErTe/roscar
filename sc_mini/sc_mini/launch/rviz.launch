@@ -1,0 +1,4 @@
+<launch>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sc_mini)/rviz/sc_m.rviz"/>                                          
+</launch>
+
